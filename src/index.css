@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+:root {
+  --romantic-red: #C62845;
+  --deep-cherry: #7D1429;
+  --burgundy: #4A1020;
+  --obsidian-cherry: #24060E;
+  --rose-red: #E63956;
+  --soft-blush: #F5B7C5;
+  --cream-white: #FFF8F5;
+  --champagne: #F1D6C8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background-color: #2B0712;
+  color: var(--cream-white);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Burgundy & Deep Cherry Glassmorphism */
+.glass-burgundy {
+  background: rgba(74, 16, 32, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(245, 183, 197, 0.22);
+  box-shadow: 0 22px 55px -18px rgba(10, 2, 5, 0.75);
+}
+
+.glass-cherry {
+  background: linear-gradient(145deg, rgba(125, 20, 41, 0.58), rgba(74, 16, 32, 0.78));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(241, 214, 200, 0.22);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.65);
+}
+
+/* Stationery Cream Texture */
+.cream-stationery {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(241, 214, 200, 0.35), transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(245, 183, 197, 0.28), transparent 50%),
+    linear-gradient(180deg, #FFF8F5 0%, #FDF1EB 100%);
+}
+
+/* 3D Card Flip & Bouquet Depth */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Romantic Red Garden Animations */
+@keyframes rosePetalFall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.88;
+  }
+  50% {
+    transform: translate3d(32px, 48vh, 0) rotate(148deg);
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-24px, 108vh, 0) rotate(315deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalShowerFall {
+  0% {
+    transform: translate3d(0, -14vh, 0) rotate(0deg) scale(0.88);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate3d(var(--sway-x, 34px), 50vh, 0) rotate(185deg) scale(1);
+  }
+  100% {
+    transform: translate3d(calc(var(--sway-x, 34px) * -0.7), 110vh, 0) rotate(370deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+@keyframes floatTinyHeart {
+  0% {
+    transform: translateY(0) scale(0.82);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.65;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.12);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkleGlow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.72) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18) rotate(45deg);
+  }
+}
+
+@keyframes windSway {
+  0%, 100% {
+    transform: rotate(-2.5deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(2.5deg) translateY(-3px);
+  }
+}
+
+@keyframes butterflyWings {
+  0%, 100% {
+    transform: scaleX(1) rotate(-3deg);
+  }
+  50% {
+    transform: scaleX(0.42) rotate(3deg);
+  }
+}
+
+@keyframes discSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes eqBar {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes ribbonWave {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+.animate-rose-petal {
+  animation: rosePetalFall var(--dur, 12s) linear infinite;
+}
+
+.animate-petal-shower {
+  animation: petalShowerFall var(--dur, 5.4s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-tiny-heart {
+  animation: floatTinyHeart var(--dur, 6.5s) ease-in-out infinite;
+}
+
+.animate-sparkle-glow {
+  animation: sparkleGlow var(--dur, 3s) ease-in-out infinite;
+}
+
+.animate-wind-sway {
+  animation: windSway 4.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-butterfly-wings {
+  animation: butterflyWings 0.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-disc-spin {
+  animation: discSpin 8s linear infinite;
+}
+
+.animate-eq-bar {
+  animation: eqBar var(--dur, 0.7s) ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.animate-ribbon-wave {
+  animation: ribbonWave 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rose-petal,
+  .animate-petal-shower,
+  .animate-tiny-heart,
+  .animate-sparkle-glow,
+  .animate-wind-sway,
+  .animate-butterfly-wings,
+  .animate-disc-spin,
+  .animate-eq-bar,
+  .animate-ribbon-wave {
+    animation: none !important;
+  }
+}
+
+/* Subtle Heart Cursor on Desktop Pointer Devices */
+@media (pointer: fine) {
+  body.bebe-red-cursor,
+  body.bebe-red-cursor a,
+  body.bebe-red-cursor button {
+    cursor: none;
+  }
+}

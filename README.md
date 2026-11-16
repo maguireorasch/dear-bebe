@@ -1,11 +1,16 @@
-<div align="center">
+# DEAR, BEBE ♡
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+> *"A little world, made just for you."*
 
-  <h1>Built with AI Studio</h2>
+**Main Theme**: Romantic Red Garden (`#C62845`, `#7D1429`, `#4A1020`, `#E63956`, `#FFF8F5`, `#F1D6C8`)  
+**Main Feature**: Interactive 3D-Perspective Digital SVG Flower Bouquet  
+**Theme Song**: *Cause You Have — LANY*
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Soundtrack Setup
+Place your legal audio file at:
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+```text
+public/assets/music/cause-you-have.mp3
+```
 
-</div>
+You can also load a legal `.mp3` directly inside the bottom-right music player widget.
